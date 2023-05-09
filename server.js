@@ -13,6 +13,16 @@ app.get("/", (req, res) => {
   res.send("CI/CD workflow using github actions.");
 });
 
+app.get("/getUser", (req, res) => {
+  res
+    .status(200)
+    .send({
+      username: "user_01",
+      email: "user01@gmail.com",
+      userId: "w439ij93rj934jr3r",
+    });
+});
+
 app.listen(PORT, HOST, () => {
   console.log(`Running on http://${HOST}:${PORT}`);
 });
