@@ -20,16 +20,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v4
-        with:
-          images: sadidshaikh/nodewebapp:v1
-          
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          image: ${{secrets.DOCKER_USERNAME }}/nodewebapp
+          tags: v1
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{secrets.DOCKER_USERNAME }}
+          password: ${{secrets.DOCKER_PASSWORD }}
