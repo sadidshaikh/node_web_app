@@ -25,6 +25,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: sadidshaikh/nodewebapp
+          tags: v1
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
