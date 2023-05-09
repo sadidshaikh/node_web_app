@@ -24,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: sadidshaikh/nodewebapp
+          images: sadidshaikh/nodewebapp:v1
           
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
