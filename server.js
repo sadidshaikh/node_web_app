@@ -13,11 +13,11 @@ app.get("/", (req, res) => {
   res.send("CI/CD workflow using github actions.");
 });
 
-app.get("/getUser", (req, res) => {
+app.get("/getuser", (req, res) => {
   res
     .status(200)
     .send({
-      username: "user_01",
+      username: "user007",
       email: "user01@gmail.com",
       userId: "w439ij93rj934jr3r",
     });
